@@ -13,7 +13,7 @@ func _notification(what):
 		get_tree().quit()
 
 func _ready() -> void:
-	OS.shell_open(OS.get_user_data_dir())
+#	OS.shell_open(OS.get_user_data_dir())
 	load_recents()
 
 func add_recent(path : String):
