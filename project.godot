@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"CSV",
+"language": &"GDScript",
+"path": "res://CSV.gd"
+}, {
+"base": "Resource",
+"class": &"CSVObject",
+"language": &"GDScript",
+"path": "res://CSVObject.gd"
+}]
+_global_script_class_icons={
+"CSV": "",
+"CSVObject": ""
+}
+
+[application]
+
+config/name="Simple contacts"
+config/name_localized={
+"it_IT": "Contatti semplici"
+}
+run/main_scene="res://recenti.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.png"
+config/macos_native_icon="res://icon.pngs"
+config/windows_native_icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Globals.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"

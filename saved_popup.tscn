@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1s71utp7qfpw"]
+
+[ext_resource type="Theme" uid="uid://chheyooha6tfm" path="res://theme.tres" id="1_dlsra"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbv46"]
+bg_color = Color(0.95, 0.95, 0.95, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.141176, 0.141176, 0.141176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="GDScript" id="GDScript_7smhe"]
+resource_name = "SavedPopup"
+script/source = "extends Panel
+
+func _ready() -> void:
+	$Ok.pressed.connect(func(): visible = false)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxhxn"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="SavedPopup" type="Panel"]
+offset_right = 208.0
+offset_bottom = 128.0
+theme = ExtResource("1_dlsra")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbv46")
+script = SubResource("GDScript_7smhe")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 163.0
+offset_bottom = 64.0
+text = "Salvato"
+label_settings = SubResource("LabelSettings_nxhxn")
+
+[node name="Ok" type="Button" parent="."]
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 24
+text = "OK"

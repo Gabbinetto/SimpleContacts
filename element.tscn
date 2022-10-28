@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://4hx3wk6udhrw"]
+
+[ext_resource type="Script" path="res://element.gd" id="1_ckkko"]
+[ext_resource type="Texture2D" uid="uid://b7gjw2cirhcyh" path="res://trash-can.svg" id="1_olrdg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vchv3"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_ryoh5"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vchv3")
+
+[sub_resource type="Texture2D" id="Texture2D_dae4g"]
+resource_local_to_scene = false
+resource_name = ""
+
+[sub_resource type="Texture2D" id="Texture2D_uekd4"]
+resource_local_to_scene = false
+resource_name = ""
+
+[node name="Element" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2i(0, 40)
+offset_right = 1920.0
+offset_bottom = 40.0
+theme = SubResource("Theme_ryoh5")
+script = ExtResource("1_ckkko")
+
+[node name="DeleteButton" type="Button" parent="."]
+custom_minimum_size = Vector2i(0, 40)
+offset_left = 1856.0
+offset_right = 1920.0
+offset_bottom = 40.0
+
+[node name="Trash-can" type="Sprite2D" parent="DeleteButton"]
+position = Vector2(8, -4)
+scale = Vector2(0.0234375, 0.0219727)
+texture = ExtResource("1_olrdg")
+centered = false
+offset = Vector2(0, -100)
+
+[node name="Categories" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.966667
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Cognome" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_right = 0.168103
+anchor_bottom = 1.0
+placeholder_text = "Cognome"
+metadata/_edit_use_anchors_ = true
+
+[node name="Nome" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.168103
+anchor_right = 0.344828
+anchor_bottom = 1.0
+placeholder_text = "Nome"
+metadata/_edit_use_anchors_ = true
+
+[node name="Indirizzo" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.344828
+anchor_right = 0.578161
+anchor_bottom = 1.0
+placeholder_text = "Indirizzo"
+metadata/_edit_use_anchors_ = true
+
+[node name="CAP" type="SpinBox" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.577586
+anchor_right = 0.62069
+anchor_bottom = 1.0
+theme_override_icons/updown = SubResource("Texture2D_dae4g")
+max_value = 99999.0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SiglaCitta" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.62069
+anchor_right = 0.711207
+anchor_bottom = 1.0
+placeholder_text = "Città"
+metadata/_edit_use_anchors_ = true
+
+[node name="Municipalita" type="SpinBox" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.711207
+anchor_right = 0.758621
+anchor_bottom = 1.0
+theme_override_icons/updown = SubResource("Texture2D_uekd4")
+max_value = 99.0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quartiere" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.758621
+anchor_right = 0.866954
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Quartiere"
+metadata/_edit_use_anchors_ = true
+
+[node name="Telefono" type="LineEdit" parent="Categories"]
+custom_minimum_size = Vector2i(0, 40)
+anchors_preset = -1
+anchor_left = 0.866379
+anchor_right = 0.999713
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Numero di telefono"
+alignment = 1
+max_length = 12
+metadata/_edit_use_anchors_ = true

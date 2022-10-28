@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bacp2l3jx05i2"]
+
+[sub_resource type="GDScript" id="GDScript_w5x5p"]
+resource_name = "FileRecenteButton"
+script/source = "extends Button
+
+@export var path = '/':
+	set(value):
+		path = value
+		text = path
+
+func _ready() -> void:
+	pressed.connect(
+		func():
+			Globals.path_to_pass = path
+			print(Globals.path_to_pass)
+	)
+	
+"
+
+[node name="FileRecente" type="Button"]
+custom_minimum_size = Vector2i(1920, 60)
+offset_right = 1920.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+text = "/"
+script = SubResource("GDScript_w5x5p")
