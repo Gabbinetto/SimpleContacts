@@ -118,6 +118,18 @@ offset_bottom = 1004.0
 tooltip_text = "Aggiunge un elemento "
 text = "Aggiungi elemento"
 
+[node name="GoBackButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2i(0, 60)
+layout_mode = 1
+offset_left = 16.0
+offset_top = 1024.0
+offset_right = 176.0
+offset_bottom = 1084.0
+scale = Vector2(0.72, 0.72)
+tooltip_text = "Aggiunge un elemento "
+text = "Torna a Recenti"
+
 [node name="OrdinaPer" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 16.0

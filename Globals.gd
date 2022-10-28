@@ -2,7 +2,7 @@ extends Node
 
 const recents_path : = 'user://verdi_recenti.csv'
 
-var path_to_pass : = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP) + '/SenzaNome.dat'
+var path_to_pass : = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP) + '/SenzaNome.csv'
 var recents = PackedStringArray([])
 
 func _notification(what):

@@ -32,9 +32,9 @@ config/name_localized={
 }
 run/main_scene="res://recenti.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.png"
-config/macos_native_icon="res://icon.pngs"
-config/windows_native_icon="res://icon.png"
+config/icon="res://icon.ico"
+config/macos_native_icon="res://icon.ico"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 

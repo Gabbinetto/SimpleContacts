@@ -29,6 +29,10 @@ func _ready() -> void:
 	%SaveButton.pressed.connect(func(): _save(current_file))
 	%LoadButton.pressed.connect(load_dialog.show)
 	%SaveAsButton.pressed.connect(save_dialog.show)
+	%GoBackButton.pressed.connect(
+		func():
+			get_tree().change_scene_to_file('res://recenti.tscn')
+	)
 
 	save_dialog.add_filter('*.csv', 'Valori separati da virgola')
 	load_dialog.add_filter('*.csv', 'Valori separati da virgola')
