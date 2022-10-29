@@ -31,9 +31,11 @@ script = ExtResource("1_ckkko")
 
 [node name="DeleteButton" type="Button" parent="."]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 0
 offset_left = 1856.0
 offset_right = 1920.0
 offset_bottom = 40.0
+tooltip_text = "Cancella la riga"
 
 [node name="Trash-can" type="Sprite2D" parent="DeleteButton"]
 position = Vector2(8, -4)
@@ -43,7 +45,7 @@ centered = false
 offset = Vector2(0, -100)
 
 [node name="Categories" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchor_right = 0.966667
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -52,6 +54,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Cognome" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.168103
 anchor_bottom = 1.0
@@ -60,6 +63,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Nome" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.168103
 anchor_right = 0.344828
@@ -69,6 +73,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Indirizzo" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.344828
 anchor_right = 0.578161
@@ -78,6 +83,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CAP" type="SpinBox" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.577586
 anchor_right = 0.62069
@@ -89,6 +95,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SiglaCitta" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.62069
 anchor_right = 0.711207
@@ -98,6 +105,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Municipalita" type="SpinBox" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.711207
 anchor_right = 0.758621
@@ -109,6 +117,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Quartiere" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.758621
 anchor_right = 0.866954
@@ -120,6 +129,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Telefono" type="LineEdit" parent="Categories"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.866379
 anchor_right = 0.999713

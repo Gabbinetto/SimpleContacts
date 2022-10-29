@@ -3,11 +3,15 @@ extends CanvasLayer
 const Element = preload('res://element.tscn')
 
 var autosave_on = false
+var current_focused_node : ElementRow
+var max_scroll_length : int
 
 @onready var save_dialog : FileDialog = $SaveDialog
 @onready var load_dialog : FileDialog = $LoadDialog
 @onready var elements : VBoxContainer = $Panel/ScrollContainer/Elementi
 @onready var sort_buttons : Array[Node] = $Panel/Ordini.get_children()
+@onready var scroll_container : ScrollContainer = elements.get_parent()
+@onready var scrollbar : VScrollBar = scroll_container.get_v_scroll_bar()
 
 var current_file = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP) + '/SenzaNome.csv':
 	set(value):
@@ -46,10 +50,32 @@ func _ready() -> void:
 	%Cerca.text_changed.connect(_search)
 	
 	_load_file(current_file)
+	
+	get_viewport().gui_focus_changed.connect(
+		func(node):
+			if node.owner is ElementRow:
+				current_focused_node = node.owner
+#			print(current_focused_node)
+	)
+	
+	scrollbar.changed.connect(func(): 
+		if max_scroll_length != scrollbar.max_value:
+			max_scroll_length = scrollbar.max_value
+			scroll_container.scroll_vertical = max_scroll_length
+	)
+	max_scroll_length = scrollbar.max_value
 
 func _add_element():
-	var new_element = Element.instantiate()
-	$Panel/ScrollContainer/Elementi.add_child(new_element)
+	var new_element : ElementRow = Element.instantiate()
+	elements.add_child(new_element)
+	
+	if is_instance_valid(current_focused_node):
+		var focused_section = current_focused_node.get_focused()
+		print(focused_section)
+		new_element.get(focused_section).grab_focus()
+	
+	current_focused_node = new_element
+	
 	return new_element
 
 func _sort_button(key : String):
@@ -146,7 +172,7 @@ func _load_file(path : String):
 		node.queue_free()
 	
 	for i in csv.length():
-		var element = _add_element()
+		var element = await _add_element()
 		element.set_from_row(
 			csv.get_row(i)
 		)
@@ -176,3 +202,24 @@ func _search(new_text : String):
 			content = str(value_node.value).to_lower()
 			
 		element.visible = content.contains(new_text.to_lower())
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed('ui_accept') and is_instance_valid(current_focused_node):
+		var index = elements.get_children().find(current_focused_node)
+		if index < (elements.get_children().size() - 1) and is_instance_valid(elements.get_child(index)):
+			_move_element(1)
+		else:
+			_add_element()
+	if event.is_action_pressed('ui_focus_down'):
+		_move_element(1)
+	elif event.is_action_pressed('ui_focus_up'):
+		_move_element(-1)
+		
+func _move_element(offset : int):
+		var elements_children : Array[Node] = elements.get_children()
+		var current_index = elements_children.find(current_focused_node)
+		print(current_index)
+		if current_index != -1 and current_index < (elements_children.size()):
+			var next = elements.get_child(current_index + offset)
+			if is_instance_valid(next):
+				next.cognome.grab_focus()

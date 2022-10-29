@@ -56,7 +56,6 @@ theme = ExtResource("1_cpg3b")
 metadata/_edit_lock_ = true
 
 [node name="Titolo" type="Label" parent="Panel"]
-layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -72,7 +71,6 @@ vertical_alignment = 1
 
 [node name="Percorso" type="Label" parent="Panel/Titolo"]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -81,21 +79,22 @@ offset_top = 8.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Il file attualmente in uso"
+mouse_filter = 1
 text = "C:/"
 label_settings = SubResource("LabelSettings_rgdib")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.186667
 anchor_right = 1.0
 anchor_bottom = 0.853333
+follow_focus = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Elementi" type="VBoxContainer" parent="Panel/ScrollContainer"]
-layout_mode = 2
 offset_top = 1.0
 offset_right = 1920.0
 offset_bottom = 718.999
@@ -105,33 +104,29 @@ theme_override_constants/separation = 1
 metadata/_edit_group_ = true
 
 [node name="Element" parent="Panel/ScrollContainer/Elementi" instance=ExtResource("2_5aajj")]
-layout_mode = 2
 
 [node name="AddButton" type="Button" parent="Panel"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(0, 60)
-layout_mode = 0
 offset_left = 1624.0
 offset_top = 944.0
 offset_right = 1821.0
 offset_bottom = 1004.0
-tooltip_text = "Aggiunge un elemento "
-text = "Aggiungi elemento"
+tooltip_text = "Aggiunge una riga"
+text = "Aggiungi riga"
 
 [node name="GoBackButton" type="Button" parent="Panel"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(0, 60)
-layout_mode = 1
 offset_left = 16.0
 offset_top = 1024.0
 offset_right = 176.0
 offset_bottom = 1084.0
 scale = Vector2(0.72, 0.72)
-tooltip_text = "Aggiunge un elemento "
+tooltip_text = "Torna alla schermata dei file recenti"
 text = "Torna a Recenti"
 
 [node name="OrdinaPer" type="Label" parent="Panel"]
-layout_mode = 0
 offset_left = 16.0
 offset_top = 64.0
 offset_right = 142.0
@@ -141,29 +136,31 @@ label_settings = SubResource("LabelSettings_uwyla")
 
 [node name="SortAttivo" type="Label" parent="Panel/OrdinaPer"]
 unique_name_in_owner = true
-layout_mode = 0
 offset_left = 152.0
 offset_right = 278.0
 offset_bottom = 37.0
+tooltip_text = "L'ordinamento attualmente
+selezionato"
+mouse_filter = 1
 label_settings = SubResource("LabelSettings_mvah1")
 
 [node name="Cerca" type="LineEdit" parent="Panel"]
 unique_name_in_owner = true
-layout_mode = 0
 offset_left = 1648.0
 offset_top = 72.0
 offset_right = 1898.0
 offset_bottom = 119.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-tooltip_text = "Cerca elementi secondo la categoria di ordinamento selezionata (Dove dice \"Ordina per...\")"
+tooltip_text = "Cerca elementi secondo la categoria di
+ordinamento selezionata (Dove dice \"Ordina per...\")"
 theme_override_icons/clear = ExtResource("4_0lup4")
 placeholder_text = "Cerca..."
 clear_button_enabled = true
 
 [node name="Ordini" type="Control" parent="Panel"]
 unique_name_in_owner = true
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -174,7 +171,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OrdinaCognome" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_right = 312.0
 offset_bottom = 64.0
 size_flags_horizontal = 3
@@ -183,7 +179,6 @@ tooltip_text = "Ordina per cognome"
 text = "Cognome"
 
 [node name="OrdinaNome" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 312.0
 offset_right = 640.0
 offset_bottom = 64.0
@@ -193,7 +188,6 @@ tooltip_text = "Ordina per nome"
 text = "Nome"
 
 [node name="OrdinaIndirizzo" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 640.0
 offset_right = 1072.0
 offset_bottom = 64.0
@@ -203,7 +197,6 @@ tooltip_text = "Ordina per indirizzo"
 text = "Indirizzo"
 
 [node name="OrdinaCAP" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 1072.0
 offset_right = 1152.0
 offset_bottom = 64.0
@@ -212,7 +205,6 @@ tooltip_text = "Ordina per CAP"
 text = "CAP"
 
 [node name="OrdinaCitta" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 1152.0
 offset_right = 1320.0
 offset_bottom = 64.0
@@ -221,7 +213,6 @@ tooltip_text = "Ordina per città"
 text = "Città"
 
 [node name="OrdinaMunicipalita" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 1320.0
 offset_right = 1408.0
 offset_bottom = 64.0
@@ -231,7 +222,6 @@ text = "Municipalità"
 clip_text = true
 
 [node name="OrdinaQuartiere" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 1408.0
 offset_right = 1608.0
 offset_bottom = 64.0
@@ -240,7 +230,6 @@ tooltip_text = "Ordina per quartiere"
 text = "Quartiere"
 
 [node name="OrdinaTelefono" type="Button" parent="Panel/Ordini"]
-layout_mode = 0
 offset_left = 1608.0
 offset_right = 1856.0
 offset_bottom = 64.0
@@ -250,7 +239,6 @@ text = "Telefono"
 
 [node name="FileButtons" type="HBoxContainer" parent="Panel"]
 custom_minimum_size = Vector2i(500, 0)
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -267,39 +255,36 @@ pivot_offset = Vector2(250, 30)
 [node name="SaveButton" type="Button" parent="Panel/FileButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(0, 60)
-layout_mode = 2
 offset_right = 164.0
 offset_bottom = 60.0
 size_flags_horizontal = 3
-tooltip_text = "Aggiunge un elemento "
+tooltip_text = "Salva il file sul quale si sta
+lavorando ora"
 text = "Salva"
 
 [node name="SaveAsButton" type="Button" parent="Panel/FileButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(0, 60)
-layout_mode = 2
 offset_left = 168.0
 offset_right = 332.0
 offset_bottom = 60.0
 size_flags_horizontal = 3
-tooltip_text = "Aggiunge un elemento "
+tooltip_text = "Scegli dove salvare il file"
 text = "Salva con nome"
 
 [node name="LoadButton" type="Button" parent="Panel/FileButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(0, 60)
-layout_mode = 2
 offset_left = 336.0
 offset_right = 500.0
 offset_bottom = 60.0
 size_flags_horizontal = 3
-tooltip_text = "Aggiunge un elemento "
+tooltip_text = "Carica un file"
 text = "Carica"
 
 [node name="SavedPopup" parent="Panel" instance=ExtResource("5_gxjrf")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -314,7 +299,6 @@ grow_vertical = 2
 
 [node name="AutosaveButton" type="CheckButton" parent="Panel"]
 unique_name_in_owner = true
-layout_mode = 0
 offset_left = 72.0
 offset_top = 944.0
 offset_right = 295.0

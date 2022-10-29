@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://chheyooha6tfm"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://chheyooha6tfm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxmho"]
 
@@ -66,6 +66,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_top = 1
 border_width_bottom = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fge3"]
+bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+border_width_left = 15
+border_color = Color(0.309804, 0.309804, 0.309804, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqbs6"]
 
 [resource]
@@ -93,4 +98,5 @@ MenuBar/styles/panel = SubResource("StyleBoxFlat_uvsse")
 Panel/styles/panel = SubResource("StyleBoxFlat_n86m0")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_cdwku")
 ScrollContainer/styles/panel = SubResource("StyleBoxFlat_6tow3")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_7fge3")
 Window/styles/embedded_border = SubResource("StyleBoxFlat_uqbs6")
