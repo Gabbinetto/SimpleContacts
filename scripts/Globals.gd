@@ -25,21 +25,15 @@ func add_recent(path : String):
 	save_recents()
 
 func save_recents():
-	print(recents)
 	
 	var file = FileAccess.open(recents_path, FileAccess.WRITE)
 	for line in recents:
 		file.store_line(line)
 
 func load_recents():
-	print(recents)
-	
 	if not FileAccess.file_exists(recents_path):
 		return
 	
 	var file = FileAccess.open(recents_path, FileAccess.READ)
 	while !file.eof_reached():
 		recents.append(file.get_line())
-
-
-	print(recents)

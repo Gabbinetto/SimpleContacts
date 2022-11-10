@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2spfppkxbeyc"]
+
+[ext_resource type="Script" path="res://scripts/element.gd" id="1_yqfeu"]
+[ext_resource type="Texture2D" uid="uid://b7gjw2cirhcyh" path="res://art/trash-can.svg" id="2_n7dkw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vchv3"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_ryoh5"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vchv3")
+
+[node name="Element" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 40)
+offset_right = 1920.0
+offset_bottom = 40.0
+theme = SubResource("Theme_ryoh5")
+script = ExtResource("1_yqfeu")
+
+[node name="DeleteButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 1856.0
+offset_right = 1920.0
+offset_bottom = 40.0
+tooltip_text = "Cancella la riga"
+
+[node name="Trash-can" type="Sprite2D" parent="DeleteButton"]
+position = Vector2(8, -4)
+scale = Vector2(0.0234375, 0.0219727)
+texture = ExtResource("2_n7dkw")
+centered = false
+offset = Vector2(0, -100)
+
+[node name="Categories" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.966667
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true

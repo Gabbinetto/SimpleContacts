@@ -5,7 +5,6 @@ static func parse_csv(path : String) -> CSVObject:
 	var file = FileAccess.open(path, FileAccess.READ)
 	
 	var headers : = file.get_csv_line()
-	print(headers)
 	var csv_object : = CSVObject.new(headers)
 
 	while !file.eof_reached():
@@ -25,4 +24,3 @@ static func write_csv(path : String, csv : CSVObject):
 			csv.get_row(i)
 		)
 	
-	print(file.file_exists(path))

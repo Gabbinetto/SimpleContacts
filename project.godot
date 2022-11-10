@@ -12,22 +12,28 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"CSV",
 "language": &"GDScript",
-"path": "res://CSV.gd"
+"path": "res://scripts/CSV.gd"
 }, {
 "base": "Resource",
 "class": &"CSVObject",
 "language": &"GDScript",
-"path": "res://CSVObject.gd"
+"path": "res://scripts/CSVObject.gd"
 }, {
 "base": "Panel",
 "class": &"ElementRow",
 "language": &"GDScript",
-"path": "res://element.gd"
+"path": "res://scripts/element.gd"
+}, {
+"base": "Panel",
+"class": &"Impostazioni",
+"language": &"GDScript",
+"path": "res://scripts/impostazioni.gd"
 }]
 _global_script_class_icons={
 "CSV": "",
 "CSVObject": "",
-"ElementRow": ""
+"ElementRow": "",
+"Impostazioni": ""
 }
 
 [application]
@@ -36,15 +42,15 @@ config/name="Simple contacts"
 config/name_localized={
 "it_IT": "Contatti semplici"
 }
-run/main_scene="res://recenti.tscn"
+run/main_scene="res://scenes/recenti.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.ico"
+config/icon="res://icon.png"
 config/macos_native_icon="res://icon.ico"
 config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
-Globals="*res://Globals.gd"
+Globals="*res://scripts/Globals.gd"
 
 [display]
 

@@ -2,8 +2,8 @@ extends CanvasLayer
 
 @onready var recenti = $Panel/Scroll/Recenti
 
-const Recent : = preload('res://recent_button.tscn')
-const main_scene_path = 'res://main.tscn'
+const Recent : = preload('res://scenes/recent_button.tscn')
+const main_scene_path = 'res://scenes/main.tscn'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,9 +16,8 @@ func _ready() -> void:
 
 		var button = Recent.instantiate()
 		button.path = path
-		recenti.add_child(button)
 		button.connect('pressed', _go_to_main)
+		recenti.add_child(button)
 
 func _go_to_main():
-	print('change')
 	get_tree().change_scene_to_file(main_scene_path)

@@ -1,0 +1,209 @@
+[gd_scene load_steps=8 format=3 uid="uid://det345va2hgub"]
+
+[ext_resource type="Script" path="res://scripts/impostazioni.gd" id="1_adkbw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agtw2"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ga65"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mno66"]
+font_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.603922)
+
+[sub_resource type="Texture2D" id="Texture2D_lfo3k"]
+resource_local_to_scene = false
+resource_name = ""
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdrjx"]
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6nqn"]
+bg_color = Color(0.45098, 0.45098, 0.45098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="Impostazioni" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_agtw2")
+script = ExtResource("1_adkbw")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ga65")
+
+[node name="Autosalvataggio" type="HBoxContainer" parent="Panel"]
+offset_left = 32.0
+offset_top = 458.0
+offset_right = 384.0
+offset_bottom = 498.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Panel/Autosalvataggio"]
+offset_top = 4.0
+offset_right = 330.0
+offset_bottom = 35.0
+size_flags_horizontal = 3
+text = "Tempo di autosalvataggio (minuti)"
+label_settings = SubResource("LabelSettings_mno66")
+
+[node name="SpinBox" type="SpinBox" parent="Panel/Autosalvataggio"]
+offset_left = 334.0
+offset_right = 401.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_icons/updown = SubResource("Texture2D_lfo3k")
+min_value = 1.0
+max_value = 600.0
+value = 5.0
+alignment = 1
+
+[node name="Chiudi" type="Button" parent="Panel"]
+unique_name_in_owner = true
+offset_left = 840.0
+offset_top = 458.0
+offset_right = 930.0
+offset_bottom = 506.0
+text = "Chiudi
+"
+
+[node name="Scala" type="VSlider" parent="Panel"]
+visible = false
+offset_left = 664.0
+offset_top = 50.0
+offset_right = 680.0
+offset_bottom = 370.0
+min_value = 1.0
+max_value = 200.0
+value = 100.0
+rounded = true
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Valore" type="Label" parent="Panel/Scala"]
+offset_left = 24.0
+offset_top = 144.0
+offset_right = 64.0
+offset_bottom = 175.0
+pivot_offset = Vector2(0, 15)
+text = "%s"
+label_settings = SubResource("LabelSettings_qdrjx")
+
+[node name="Voci" type="Panel" parent="Panel"]
+anchors_preset = -1
+anchor_left = 0.0333333
+anchor_top = 0.0925926
+anchor_right = 0.366667
+anchor_bottom = 0.685185
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6nqn")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Voci"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Voci/ScrollContainer"]
+offset_right = 640.001
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ChangeButtons" type="HBoxContainer" parent="Panel/Voci"]
+offset_left = 192.0
+offset_top = 328.0
+offset_right = 320.0
+offset_bottom = 386.0
+
+[node name="Rimuovi" type="Button" parent="Panel/Voci/ChangeButtons"]
+unique_name_in_owner = true
+offset_right = 62.0
+offset_bottom = 58.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "-"
+
+[node name="Aggiungi" type="Button" parent="Panel/Voci/ChangeButtons"]
+unique_name_in_owner = true
+offset_left = 66.0
+offset_right = 128.0
+offset_bottom = 58.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "+"
+
+[node name="MoveButtons" type="Control" parent="Panel/Voci"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 328.0
+offset_right = 384.0
+offset_bottom = 128.0
+
+[node name="Sopra" type="Button" parent="Panel/Voci/MoveButtons"]
+unique_name_in_owner = true
+offset_right = 56.0
+offset_bottom = 62.0
+scale = Vector2(-1, -1)
+pivot_offset = Vector2(28, 31)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 36
+text = "V"
+
+[node name="Sotto" type="Button" parent="Panel/Voci/MoveButtons"]
+unique_name_in_owner = true
+offset_top = 66.0
+offset_right = 56.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 36
+text = "V"

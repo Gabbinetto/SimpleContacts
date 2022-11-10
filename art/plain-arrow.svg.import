@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wa1n7ca5dkaa"
-path="res://.godot/imported/clear-bar.png-294dc0282f3502895984b938fbcba3dd.ctex"
+uid="uid://uue20f47divj"
+path="res://.godot/imported/plain-arrow.svg-656f049e29781a1dc22ab30c867249d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://clear-bar.png"
-dest_files=["res://.godot/imported/clear-bar.png-294dc0282f3502895984b938fbcba3dd.ctex"]
+source_file="res://art/plain-arrow.svg"
+dest_files=["res://.godot/imported/plain-arrow.svg-656f049e29781a1dc22ab30c867249d3.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=0.25
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
